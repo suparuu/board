@@ -1,0 +1,38 @@
+.head{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(91, 176, 49);
+}
+.head_right{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.a_box{
+    width: 33%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.after_line{
+    width: 25%;
+    margin: 0 auto;
+}
+.after_line::after{
+    content: '';
+    color: gray;
+    border: 0.5px solid;
+}
+.h1_box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.h1_box > h1 {
+    font-size: 50px;
+    color: #8f31ba;
+}
