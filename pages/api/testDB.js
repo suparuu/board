@@ -1,5 +1,5 @@
 import { executeQuery } from "../../data/db.js";
-
+//테스트용 db 
 export default function handler(req , res){
     const { method , body , query } = req;
 
@@ -7,7 +7,7 @@ export default function handler(req , res){
     // console.log(method, '메소드 확인')//create read update delete 
     // console.log(body, 'body 확인')// 아직 잘 모르겠음
     console.log(query, 'query 확인')//테이블 안에 있는 데이터들
-
+    
     switch(method){
         case "GET" :
             dataGet();//read 메소드
@@ -28,6 +28,7 @@ export default function handler(req , res){
 
         }
     }//read 메소드
+
 
   
      async function dataCreate(){

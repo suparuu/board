@@ -23,8 +23,6 @@ pool.getConnection((err) => {
 const executeQuery = async (query, arraParms) => {
     return await new Promise((resolve) => {
       pool.query(query, arraParms, (err, data) => {
-        console.log(data, '어디꺼?')
-        console.log(query)
         
         resolve(data);
       });

@@ -18,23 +18,6 @@ const Boards = () => {
     });
   }, []);
 
-  // useEffect(()=>{
-  //     async function fetchPost() {
-
-  //     try{
-  //         const connection= await mysql.createConnection(executeQuery)
-  //         const [rows] = await connection.execute('SELECT * FROM posts');
-  //         connection.end();
-  //         setPost(rows);
-
-  //     } catch(err) {
-  //         console.error('에러났어영' , err);
-  //     }
-  //     fetchPost();
-  // }
-
-  // },[])
-
   return (
     <>
       <section className={Boardscss.section}>

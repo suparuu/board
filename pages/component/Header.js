@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Headercss from "@/styles/Headercss.module.css";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Header = () => {
   const [menuname, setMenuname] = useState();
+  const router = useRouter();
 
   useEffect(() => {
     const aTagname = [
-      { name: "회원가입" },
-      { name: "로그인" },
-      { name: "자유게시판" },
-      { name: "전체게시판" },
+      { name: "회원가입" , url: './component/Signin'},
+      { name: "로그인" , url: './component/Signup' },
     ];
     setMenuname(aTagname);
   }, []);
@@ -21,8 +22,8 @@ const Header = () => {
           <div className={Headercss.head_right}>
             <div className={Headercss.a_box}>
               {menuname &&
-                menuname.map((obj, i) => {
-                  return <a className={Headercss.after_line}>{obj.name}</a>;
+                menuname.map((obj) => {
+                  return <Link href={obj.url} className={Headercss.after_line}>{obj.name}</Link>;
                 })}
             </div>
           </div>
