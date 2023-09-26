@@ -1,3 +1,4 @@
+//게시판 내용들 그대로 쓸지 안쓸지는 모르겠음 . . 
 import React, { useEffect, useState } from "react";
 import Boardscss from "@/styles/Boardscss.module.css";
 import axios from "axios";
@@ -9,10 +10,11 @@ const Boards = () => {
   const [post, setPost] = useState([]);
 
   function goWrite() {
-    router.push("component/Write");
+    alert('로그인 후 이용하세요')
+    router.push("/component/Signup");
   }
   useEffect(() => {
-    axios.get("/api/testDB").then((res) => {
+    axios.get("/api/UserBoard").then((res) => {
       console.log(res.data, "boardjs 입니다.");
       setPost(res.data);
     });
@@ -41,9 +43,9 @@ const Boards = () => {
               post.map((obj) => {
                 return (
                   <div className={Boardscss.board_datas}>
-                    <ul>{obj.num}</ul>
-                    <ul>{obj.title}</ul>
-                    <ul>{obj.name}</ul>
+                    <ul>{obj.UserBoardID}</ul>
+                    <ul>{obj.Title}</ul>
+                    <ul>{obj.UserName}</ul>
                     <ul>{obj.date}</ul>
                   </div>
                 );

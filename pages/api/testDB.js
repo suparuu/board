@@ -1,5 +1,5 @@
+//테스트용 테이블
 import { executeQuery } from "../../data/db.js";
-//테스트용 db 
 export default function handler(req , res){
     const { method , body , query } = req;
 
