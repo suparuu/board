@@ -32,7 +32,8 @@ const Signup = () => {
                 router.push({
                     pathname : `./user/${filterValue[0].UserID}`,
                     query : {
-                        UserID : filterValue[0].UserID
+                        UserID : filterValue[0].UserID,
+                        UserName : filterValue[0].UserName
                     }
                 })
             }

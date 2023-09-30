@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 
 const Boards = () => {
   const router = useRouter();
-
   const [post, setPost] = useState([]);
 
   function goWrite() {
@@ -14,7 +13,7 @@ const Boards = () => {
     router.push("/component/Signup");
   }
   useEffect(() => {
-    axios.get("/api/UserBoard").then((res) => {
+    axios.get("/api/Posts").then((res) => {
       console.log(res.data, "boardjs 입니다.");
       setPost(res.data);
     });
@@ -25,7 +24,7 @@ const Boards = () => {
       <section className={Boardscss.section}>
         <div>
           <div>
-            <h1>~~게시판</h1>
+            
           </div>
         </div>
       </section>
@@ -43,10 +42,10 @@ const Boards = () => {
               post.map((obj) => {
                 return (
                   <div className={Boardscss.board_datas}>
-                    <ul>{obj.UserBoardID}</ul>
-                    <ul>{obj.Title}</ul>
-                    <ul>{obj.UserName}</ul>
-                    <ul>{obj.date}</ul>
+                    <ul>{obj.id}</ul>
+                    <ul>{obj.title}</ul>
+                    <ul>{obj.author_name}</ul>
+                    <ul>{obj.created_at}</ul>
                   </div>
                 );
               })}

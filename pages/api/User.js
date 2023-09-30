@@ -1,6 +1,5 @@
-import { executeQuery } from "../../data/db.js";
-
 //회원 관리 DB
+import { executeQuery } from "../../data/db.js";
 export default function handler(req, res) {
   const { method, body, query } = req;
 
