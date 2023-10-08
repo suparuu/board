@@ -41,19 +41,22 @@ const Boards = () => {
             {post &&
               post.map((obj) => {
                 return (
+                  <>
+                  <div className={Boardscss.gray_line}></div>
                   <div className={Boardscss.board_datas}>
                     <ul>{obj.id}</ul>
                     <ul>{obj.title}</ul>
                     <ul>{obj.author_name}</ul>
                     <ul>{obj.created_at}</ul>
                   </div>
+                  </>
                 );
               })}
           </div>
-        </article>
         <div>
           <button onClick={() => goWrite()}>글쓰러 가기</button>
         </div>
+        </article>
       </section>
     </>
   );

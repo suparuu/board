@@ -1,15 +1,13 @@
 .head{
     width: 100%;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: rgb(91, 176, 49);
+    justify-content: space-between;
 }
 .head_right{
     width: 100%;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: center;
 }
 .a_box{
     width: 33%;
@@ -18,19 +16,19 @@
     align-items: center;
 }
 .after_line{
-    width: 25%;
-    margin: 0 auto;
+
 }
 .after_line::after{
     content: '';
     color: gray;
     border: 0.5px solid;
+    margin: 0 13px;
 }
 .h1_box{
-    width: 100%;
+    width: 33%;
     display: flex;
     justify-content: center;
-    align-items: center;
+
 }
 .h1_box > h1 {
     font-size: 50px;
@@ -39,4 +37,24 @@
 .logout{
     width: 25%;
     margin: 0 auto;
+}
+.form_class{
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title_box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title_box > h2 {
+    
+}
+.none_after_line{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

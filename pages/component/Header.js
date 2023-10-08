@@ -1,37 +1,30 @@
+//로그인 전 header component
 import React, { useEffect, useState } from "react";
 import Headercss from "@/styles/Headercss.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
 const Header = () => {
-  const [menuname, setMenuname] = useState();
-  const router = useRouter();
 
-  useEffect(() => {
-    const aTagname = [
-      { name: "회원가입" , url: './component/Signin'},
-      { name: "로그인" , url: './component/Signup' },
-    ];
-    setMenuname(aTagname);
-  }, []);
 
   return (
     <>
       <section className={Headercss.head}>
-        <form>
+        <div className={Headercss.h1_box}>
+          <h1>Suparuu</h1>
+        </div>
+        <form className={Headercss.form_class}>
           <div className={Headercss.head_right}>
             <div className={Headercss.a_box}>
-              {menuname &&
-                menuname.map((obj) => {
-                  return <Link href={obj.url} className={Headercss.after_line}>{obj.name}</Link>;
-                })}
+                <Link href='./component/Signin' className={Headercss.after_line}>회원가입</Link>
+                <Link href='./component/Signup' >로그인</Link>
             </div>
           </div>
         </form>
-        <div className={Headercss.h1_box}>
-          <h1>CRUD 게시판</h1>
-        </div>
       </section>
+      <div className={Headercss.title_box}>
+        <h2>CRUD 게시판</h2>
+      </div>
     </>
   );
 };

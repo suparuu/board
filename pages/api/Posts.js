@@ -4,7 +4,6 @@ import { executeQuery } from "../../data/db.js";
 export default function handler(req, res) {
   const { method, body, query } = req;
 
-
   switch (method) {
     case "GET":
       dataGet();
@@ -37,10 +36,16 @@ export default function handler(req, res) {
   }
 
   async function dataDelete(){
-    let { author_id } = body;
-    let data = await executeQuery(
-      'delete from Posts where author_id=?' , [author_id]
-    );
-    res.json(data)
+    let { id , loginID } = body;
+    console.log(id, loginID ,  '받아온 id값과 loginID값')
+    try{
+      let data = await executeQuery(
+        'delete from Posts where (id = ?) and (author_id = ?)' , [id , loginID]
+      );
+      res.status(200).send('글이 삭제 되었습니다.');
+      res.json(data);
+    } catch(err) {
+      console.error(err ,'쿼리 삭제 에러 ')
+    }
   }
 }

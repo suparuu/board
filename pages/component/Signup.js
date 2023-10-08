@@ -1,11 +1,11 @@
-//로그인
+//로그인 component
 import axios from 'axios'
 import { useRouter } from 'next/router'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 const Signup = () => {
-    
+
     // useEffect(()=>{
     //     axios.get("../api/User").then((res)=>{
     //         console.log(res.data.filter((obj)=> obj.ID) ,'User 데이터 확인 ')
@@ -72,3 +72,18 @@ const Signup = () => {
 }
 
 export default Signup
+
+// export async function getServerSideProps(context) {
+//     // 로그인 로직 처리 후 사용자 정보 얻기
+//     const user = await sendData(); // loginUser는 실제 로그인 함수로 대체해야 합니다.
+  
+//     // 사용자 정보를 기반으로 쿠키 설정
+//     if (user) {
+//       context.res.setHeader('Set-Cookie', `user_id=${user.id}; Path=/`);
+//     }
+  
+//     // 페이지 props 반환
+//     return {
+//       props: {},
+//     };
+//   }// 쿠 키 설정 보류

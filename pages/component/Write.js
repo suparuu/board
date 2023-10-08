@@ -1,3 +1,4 @@
+//게시글 작성 component
 import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
