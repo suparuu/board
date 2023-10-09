@@ -30,7 +30,7 @@ const Header_user = () => {
       <form className={Headercss.form_class}>
         <div className={Headercss.head_right}>
           <div className={Headercss.a_box}>
-              <Link href='./component/Signin' className={Headercss.none_after_line}>로그아웃</Link>
+              <Link href='./component/Signin' className={Headercss.after_line}>로그아웃</Link>
           </div>
         </div>
       </form>

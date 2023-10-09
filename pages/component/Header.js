@@ -17,7 +17,8 @@ const Header = () => {
           <div className={Headercss.head_right}>
             <div className={Headercss.a_box}>
                 <Link href='./component/Signin' className={Headercss.after_line}>회원가입</Link>
-                <Link href='./component/Signup' >로그인</Link>
+                <div className={Headercss.column_line}></div>
+                <Link href='./component/Signup' className={Headercss.after_line}>로그인</Link>
             </div>
           </div>
         </form>

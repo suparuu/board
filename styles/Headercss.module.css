@@ -16,13 +16,13 @@
     align-items: center;
 }
 .after_line{
+    color: black;
+    font-weight: bold;
 
 }
-.after_line::after{
-    content: '';
-    color: gray;
-    border: 0.5px solid;
-    margin: 0 13px;
+.column_line{
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    height: 19.5px;
 }
 .h1_box{
     width: 33%;
@@ -31,8 +31,8 @@
 
 }
 .h1_box > h1 {
-    font-size: 50px;
-    color: #8f31ba;
+    font-size: 30px;
+    color: #F0255E;
 }
 .logout{
     width: 25%;
@@ -52,9 +52,4 @@
 }
 .title_box > h2 {
     
-}
-.none_after_line{
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }

@@ -86,13 +86,13 @@ export default function Login(){
         <Header_user></Header_user>
         <section className={Boardscss.section}>
         <div>
-          <div>
-              <h1>{router.query.UserName}님 반갑습니다</h1>
-          </div>
         </div>
       </section>
 
       <section className={Boardscss.board}>
+          <div className={Boardscss.user_name}>
+              <h1>{router.query.UserName}님 반갑습니다</h1>
+          </div>
         <article className={Boardscss.chart}>
           <div className={Boardscss.board_name}>
             <p>No</p>
@@ -106,11 +106,11 @@ export default function Login(){
                 console.log(obj)
                 return (
                   <>
-                  <div className={Boardscss.gray_line}></div>
+                  <hr className={Boardscss.gray_line}></hr>
 
-                  <div className={Boardscss.board_datas} onClick={()=> gotoPost(obj)}>
+                  <div className={Boardscss.board_datas} >
                     <ul>{obj.id}</ul>
-                    <ul>{obj.title}</ul>
+                    <ul onClick={()=> gotoPost(obj)} className={Boardscss.title_underline}>{obj.title}</ul>
                     <ul>{obj.author_name}</ul>
                     <ul>{obj.created_at}</ul>
                   </div>
@@ -138,7 +138,9 @@ export default function Login(){
               })} */}
           </div>
         </article>
-          <button onClick={() => goWrite()}>글쓰러 가기</button>
+        <div className={Boardscss.btn_box}>
+          <button onClick={() => goWrite()} className={Boardscss.write_btn}>글쓰러 가기</button>
+        </div>
           {/* <Link href="../Write"  userID={userID}>
           <div>
             <button>글쓰러 가기</button>

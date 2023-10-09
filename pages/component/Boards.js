@@ -42,10 +42,10 @@ const Boards = () => {
               post.map((obj) => {
                 return (
                   <>
-                  <div className={Boardscss.gray_line}></div>
+                  <hr className={Boardscss.gray_line}></hr>
                   <div className={Boardscss.board_datas}>
                     <ul>{obj.id}</ul>
-                    <ul>{obj.title}</ul>
+                    <ul className={Boardscss.title_underline}>{obj.title}</ul>
                     <ul>{obj.author_name}</ul>
                     <ul>{obj.created_at}</ul>
                   </div>
@@ -53,10 +53,10 @@ const Boards = () => {
                 );
               })}
           </div>
-        <div>
-          <button onClick={() => goWrite()}>글쓰러 가기</button>
-        </div>
         </article>
+        <div className={Boardscss.btn_box}>
+          <button className={Boardscss.write_btn} onClick={() => goWrite()}>글쓰러 가기</button>
+        </div>
       </section>
     </>
   );

@@ -1,0 +1,64 @@
+
+.write_h1{
+    margin-top: 10px;
+    margin: 0 auto;
+    width: 80%;
+    font-size: 30px;
+
+}
+.form_box{
+    margin: 0 auto;
+    width: 100%;
+}
+.title_box{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.input_title{
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid;
+    font-size: 18px;
+
+    
+}
+.content_box{
+    width: 80%;
+    margin-top: 10px;
+    margin: 0 auto;
+}
+.input_content{
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    height: 350px;
+    vertical-align: top;
+    border-radius: 10px;
+    border: 1px solid;
+    line-height: 1.8;
+
+
+}
+.input_content::placeholder{
+    position: relative;
+}
+.submit_box{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 40px;
+}
+.input_submit{
+    width: 75px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #F0255E;
+    color: whitesmoke;
+    cursor: pointer;
+    margin-top: 20px;
+}
