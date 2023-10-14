@@ -5,14 +5,27 @@ import Headmeta from '@/pages/component/Headmeta'
 import Boardscss from "@/styles/Boardscss.module.css";
 import axios from "axios";
 import Header_user from "../Header_user";
+import Pagination from "../Pagination";
 
 export default function Login(){
 
   const router = useRouter();
-    const [post, setPost] = useState([]);//Posts DB 데이터들
+
+    const [post, setPost] = useState([]);//Posts(게시글) DB 데이터들
     const [userData , setUserData] = useState();//User DB 데이터들 
     const [filtered, setFiltered] = useState();//filter한 userID값
     const [test , setTest] = useState();
+    const [postsPerPage] = useState(10);//게시글 10개
+    const [currentPage , setCurrentPage] = useState(1);//게시글 1개
+
+
+    const totalPages = Math.ceil(post.length / postsPerPage)
+    
+    function handlePageChange(pageNumber) {
+      if( pageNumber >= 1 && pageNumber <= totalPages) {
+        setCurrentPage(pageNumber);
+      }
+    }//페이지 변경 시 현재 페이지 업데이트
 
     function goWrite() {
       router.push({
@@ -102,13 +115,13 @@ export default function Login(){
           </div>
           <div>
             {post &&
-              post.map((obj) => {
+              post.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage).map((obj , i) => {
                 console.log(obj)
                 return (
                   <>
                   <hr className={Boardscss.gray_line}></hr>
 
-                  <div className={Boardscss.board_datas} >
+                  <div key={i} className={Boardscss.board_datas} >
                     <ul>{obj.id}</ul>
                     <ul onClick={()=> gotoPost(obj)} className={Boardscss.title_underline}>{obj.title}</ul>
                     <ul>{obj.author_name}</ul>
@@ -138,6 +151,14 @@ export default function Login(){
               })} */}
           </div>
         </article>
+
+        <Pagination
+        currentPage={currentPage}
+        totalPosts={post.length}
+        postsPerPage={postsPerPage}
+        onPageChange={handlePageChange}
+      />
+
         <div className={Boardscss.btn_box}>
           <button onClick={() => goWrite()} className={Boardscss.write_btn}>글쓰러 가기</button>
         </div>

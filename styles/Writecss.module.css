@@ -4,6 +4,8 @@
     margin: 0 auto;
     width: 80%;
     font-size: 30px;
+    text-align: center;
+    padding-top: 20px;
 
 }
 .form_box{
@@ -40,10 +42,6 @@
     border: 1px solid;
     line-height: 1.8;
 
-
-}
-.input_content::placeholder{
-    position: relative;
 }
 .submit_box{
     margin: 0 auto;

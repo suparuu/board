@@ -1,13 +1,12 @@
-.section{
+.section {
     width: 100%;
+}
 
-}
-.board{
+.board {
     width: 100%;
-    height: 500px;
-    
 }
-.board_name{
+
+.board_name {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -15,42 +14,49 @@
     margin-top: 10px;
     height: 50px;
 }
-.board_name > p {
+
+.board_name>p {
     width: 20%;
     text-align: center;
 }
-.board_datas{
+
+.board_datas {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50px;
-    margin: 10px 0;
+    margin: 5px 0;
 }
-.board_datas:hover{
+
+.board_datas:hover {
     background-color: #FFC1D2;
 }
-.board_datas > ul{
+
+.board_datas>ul {
     width: 20%;
     text-align: center;
 }
-.chart{
+
+.chart {
     width: 80%;
-    margin: 0 auto;
+    margin: 20px auto;
     border-top: 1px solid;
     border-bottom: 1px solid;
-    margin-top: 20px;
 }
-.linkBtn{
+
+.linkBtn {
     width: 50px;
     height: 50px;
     color: blanchedalmond;
 }
-.gray_line{
+
+.gray_line {
     width: 100%;
     border: 0.5px solid rgba(0, 0, 0, 0.2);
 }
-.write_btn{
+
+.write_btn {
     width: 75px;
     height: 50px;
     border-radius: 10px;
@@ -58,19 +64,30 @@
     background-color: #F0255E;
     color: whitesmoke;
     cursor: pointer;
-    margin-top: 20px ;
+    margin-top: 20px;
 }
-.btn_box{
+
+.btn_box {
     width: 80%;
     margin: 0 auto;
     display: flex;
     justify-content: flex-end;
 }
-.user_name{
+
+.user_name {
     width: 80%;
     margin: 0 auto;
 }
-.title_underline:hover{
+
+.title_underline:hover {
     cursor: pointer;
     text-decoration: underline;
+}
+
+.pagination {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

@@ -1,18 +1,18 @@
 .head{
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
 }
 .head_right{
-    width: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 .a_box{
-    width: 33%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 .after_line{
@@ -20,14 +20,30 @@
     font-weight: bold;
 
 }
+.before_line{
+    color: black;
+    font-weight: bold;
+    padding-left: 8px;
+}
+.before_line:before{
+    content: '';
+    display: inline;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    margin-right: 8px;
+
+
+
+}
+
 .column_line{
     border: 0.5px solid rgba(0, 0, 0, 0.2);
     height: 19.5px;
 }
 .h1_box{
-    width: 33%;
+    width: 50%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
 
 }
 .h1_box > h1 {
@@ -37,12 +53,6 @@
 .logout{
     width: 25%;
     margin: 0 auto;
-}
-.form_class{
-    width: 33%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .title_box{
     width: 100%;

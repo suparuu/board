@@ -27,13 +27,13 @@ const Header_user = () => {
       <div className={Headercss.h1_box}>
         <h1>Suparuu</h1>
       </div>
-      <form className={Headercss.form_class}>
         <div className={Headercss.head_right}>
+      <form className={Headercss.form_class}>
           <div className={Headercss.a_box}>
-              <Link href='./component/Signin' className={Headercss.after_line}>로그아웃</Link>
+              <Link href='../../' className={Headercss.after_line}>로그아웃</Link>
           </div>
-        </div>
       </form>
+        </div>
     </section>
     <div className={Headercss.title_box}>
       <h2>CRUD 게시판</h2>
