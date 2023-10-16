@@ -3,10 +3,16 @@ import React, { useEffect, useState } from "react";
 import Boardscss from "@/styles/Boardscss.module.css";
 import axios from "axios";
 import { useRouter } from "next/router";
+import Pagination from "../component/Pagination"
 
 const Boards = () => {
   const router = useRouter();
   const [post, setPost] = useState([]);
+  const [postsPerPage] = useState(10); //게시글 10개
+  const [currentPage, setCurrentPage] = useState(1); //게시글 1개
+
+  const totalPages = Math.ceil(post.length / postsPerPage);
+
 
   function goWrite() {
     alert('로그인 후 이용하세요')
@@ -18,6 +24,14 @@ const Boards = () => {
       setPost(res.data);
     });
   }, []);
+
+
+  function handlePageChange(pageNumber) {
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  } //페이지 변경 시 현재 페이지 업데이트
+
 
   return (
     <>
@@ -39,7 +53,8 @@ const Boards = () => {
           </div>
           <div>
             {post &&
-              post.map((obj) => {
+              post.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage)
+              .map((obj) => {
                 return (
                   <>
                   <hr className={Boardscss.gray_line}></hr>
@@ -54,6 +69,12 @@ const Boards = () => {
               })}
           </div>
         </article>
+        <Pagination
+          currentPage={currentPage}
+          totalPosts={post.length}
+          postsPerPage={postsPerPage}
+          onPageChange={handlePageChange}
+        />
         <div className={Boardscss.btn_box}>
           <button className={Boardscss.write_btn} onClick={() => goWrite()}>글쓰러 가기</button>
         </div>

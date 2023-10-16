@@ -9,16 +9,17 @@ const Post = () => {
   const router = useRouter();
 
   const postData = router.query;
+  
 
   console.log(postData, "postData");
   let loginID = parseInt(postData.loginID); //router.query.loginID << 로그인 id값
   console.log(loginID, "로그인 아이디");
+  let id = postData.id; // 게시글 id값
+  let PostID = postData.postID; // 게시글 author_id값
+  let intID = parseInt(PostID);
 
   function deleteData() {
-    let id = postData.id; // 게시글 id값
-    let PostID = postData.postID; // 게시글 author_id값
 
-    let intID = parseInt(PostID);
     console.log(id, PostID, "값 확인 ");
     if (intID === loginID) {
       //누른 DB의 id 값과 로그인한 id 값이 같으면 삭제
@@ -46,6 +47,24 @@ const Post = () => {
     }
   }
 
+  function updateData() {
+    if(intID === loginID) {
+        router.push({
+            pathname: "./Update",
+            query: {
+                postID : postData.id,
+                userID : loginID,
+                    //제목하고 게시글도 가져와야함
+                title : postData.title,
+                content : postData.content,
+            },
+        });
+    } else {
+        alert("수정 권한이 없습니다.");
+    }
+
+  }
+
   return (
     <>
       <Header_user></Header_user>
@@ -66,7 +85,7 @@ const Post = () => {
           </div>
           <div className={Postcss.btn_box}>
             <div className={Postcss.btn_padding}>
-              <button className={Postcss.btn_style}>수정</button>
+              <button className={Postcss.btn_style} onClick={()=> updateData()}>수정</button>
             </div>
             <div>
               <button className={Postcss.btn_style} onClick={() => deleteData()}>삭제</button>

@@ -14,6 +14,9 @@ export default function handler(req, res) {
     case "DELETE":
       dataDelete();
       break;
+    case "UPDATE":
+      dataUpdate();
+      break;
   }
 
   async function dataGet() {
@@ -23,7 +26,7 @@ export default function handler(req, res) {
     }   catch(err){
         res.send(err)
     }
-  }
+  }//data get
 
   async function dataCreate() {
     let { title, content , author_name , author_id } = body;
@@ -33,7 +36,7 @@ export default function handler(req, res) {
     );
     res.status(200).send("글이 등록 되었습니다!");
     res.json(data);
-  }
+  }//data create
 
   async function dataDelete(){
     let { id , loginID } = body;
@@ -47,5 +50,22 @@ export default function handler(req, res) {
     } catch(err) {
       console.error(err ,'쿼리 삭제 에러 ')
     }
+  }//data delete
+
+  async function dataUpdate() {
+    let { postID , content , title  , userID} = body;
+
+    try {
+      let data = await executeQuery(
+        'UPDATE Posts SET title = ? , content = ? WHERE (id = ?) and (author_id = ?) ',[title, content, postID, userID]
+      );
+        res.status(200).send({message : '글이 수정 되었습니다.'});
+        res.json(data);
+    } catch(err) {
+      console.error(err);
+      res.status(500).json({message : '게시글 수정 오류'});
+
+    }
+
   }
 }
